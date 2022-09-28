@@ -1,0 +1,6 @@
+from python:3.7
+
+run mkdir -p /usr/src/app/
+workdir /usr/src/app/
+copy . /usr/src/app/
+cmd ["python", "main.py"]
