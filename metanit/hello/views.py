@@ -3,6 +3,14 @@ from django.http import HttpResponseRedirect, HttpResponseNotFound
 from .models import Person
 
 
+def contacts(request):
+    return render(request, "contacts.html")
+
+
+def about(request):
+    return render(request, "about.html")
+
+
 # получение данных из бд
 def index(request):
     people = Person.objects.all()
