@@ -6,6 +6,13 @@ from .models import Person
 def contacts(request):
     return render(request, "contacts.html")
 
+def narod(request):
+    people = Person.objects.all()
+    return render(request, "narod.html", {"people": people})
+
+# def cbr(request):
+#     people = Person.objects.all()
+#     return render(request, "cbr.html", {"people": people})
 
 def about(request):
     return render(request, "about.html")
@@ -15,6 +22,7 @@ def about(request):
 def index(request):
     people = Person.objects.all()
     return render(request, "index.html", {"people": people})
+    #return render(request, "index.html")
 
 
 # сохранение данных в бд

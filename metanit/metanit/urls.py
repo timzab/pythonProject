@@ -8,5 +8,6 @@ urlpatterns = [
     path("delete/<int:id>/", views.delete),
     path("about/", views.about),
     path("contacts/", views.contacts),
+    path("narod/", views.narod),
 
 ]
