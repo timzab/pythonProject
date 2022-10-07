@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponseNotFound
-from .models import Person
+from .models import Person, Cbr_data
 
 
 def contacts(request):
@@ -10,9 +10,9 @@ def narod(request):
     people = Person.objects.all()
     return render(request, "narod.html", {"people": people})
 
-# def cbr(request):
-#     people = Person.objects.all()
-#     return render(request, "cbr.html", {"people": people})
+def cbr(request):
+    money = Cbr_data.objects.all()
+    return render(request, "cbr.html", {"money": money})
 
 def about(request):
     return render(request, "about.html")

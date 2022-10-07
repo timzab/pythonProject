@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}ЦБР{% endblock title %}
+{% block header %}ЦБР{% endblock header %}
+
+{% block content %}
+
+<body>
+    <!--form method="POST" action="create/">
+        {% csrf_token %}
+        <p>
+            <label>Введите имя</label><br>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label>Введите возраст</label><br>
+            <input type="number" name="age" />
+        </p>
+        <input type="submit" value="Сохранить" >
+    </form-->
+    {% if money.count > 0 %}
+    <h2>Стоимость основных мировых валют</h2>
+    <table>
+        <thead><th>Id</th><th>Код валюты</th><th>Букв код</th><th>Номинал</th><th>Наименование</th><th>Стоимость, руб</th><th>Дата</th></thead>
+        {% for Cbr_data in money %}
+        <tr>
+            <td>{{ Cbr_data.id }}</td>
+            <td>{{ Cbr_data.NumCode }}</td>
+            <td>{{ Cbr_data.CharCode }}</td>
+            <td>{{ Cbr_data.Nominal }}</td>
+            <td>{{ Cbr_data.Name }}</td>
+            <td>{{ Cbr_data.Value }}</td>
+            <td>{{ Cbr_data.DateIn }}</td>
+            <!--td><a href="edit/{{person.id}}">Изменить</a> | <a href="delete/{{person.id}}">Удалить</a></td-->
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+
+
+
+
+
+
+
+
+<p>Телефон: +12345677890</p>
+<p>Email: admin@admin.com</p>
+{% endblock content %}
+</body>
+</html>
